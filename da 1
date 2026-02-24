@@ -1,0 +1,173 @@
+QUESTION 1: . Write a Python program to calculate the following for a given list of numbers:
+Mean
+Median
+Mode
+Variance
+Standard Deviation
+
+ import statistics
+numbers = [10,20,30,40,50]
+mean = statistics.mean(numbers)
+mode = statistics.mode(numbers)
+median = statistics.median(numbers)
+variance = statistics.variance(numbers)
+std_deviation = statistics.stdev(numbers)
+
+print("List of Numbers:", numbers)
+print("Mean:", mean)
+print("Median:", median)
+print("Mode:", mode)
+print("Variance:", variance)
+print("Standard Deviation:", std_deviation)
+
+OUTPUT:
+List of Numbers: [10, 20, 30, 40, 50]
+Mean: 30
+Median: 30
+Mode: 10
+Variance: 250
+Standard Deviation: 15.811388300841896
+
+QUESTION 2: . Create a NumPy array and perform the following operations:
+Find sum and mean
+Find maximum and minimum
+Reshape the array
+Perform element-wise multiplication
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+print("Original Array:", arr)
+print("Sum:", np.sum(arr))
+print("Mean:", np.mean(arr))
+print("Maximum:", np.max(arr))
+print("Minimum:", np.min(arr))
+reshaped_arr = arr.reshape(2, 3)
+print("Reshaped Array (2x3):\n", reshaped_arr)
+result = arr * arr
+print("Element-wise Multiplication:", result)
+
+OUTPUT:
+Original Array: [1 2 3 4 5 6]
+Sum: 21
+Mean: 3.5
+Maximum: 6
+Minimum: 1
+Reshaped Array (2x3):
+ [[1 2 3]
+ [4 5 6]]
+Element-wise Multiplication: [ 1  4  9 16 25 36]
+
+QUESTION 3: Write a Python program to:
+Create two matrices
+Perform addition and subtraction
+Perform matrix multiplication
+Find transpose of a matrix
+
+import numpy as np
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+print("Matrix A:\n", A)
+print("Matrix B:\n", B)
+
+print("Addition:\n", A + B)
+print("Subtraction:\n", A - B)
+print("Matrix Multiplication:\n", np.dot(A, B))
+print("Transpose of A:\n", A.T)
+ OUTPUT:
+Matrix A:
+ [[1 2]
+ [3 4]]
+Matrix B:
+ [[5 6]
+ [7 8]]
+Addition:
+ [[ 6  8]
+ [10 12]]
+Subtraction:
+ [[-4 -4]
+ [-4 -4]]
+Matrix Multiplication:
+ [[19 22]
+ [43 50]]
+Transpose of A:
+ [[1 3]
+ [2 4]]
+
+QUESTION 4: Generate a random array of 10 numbers and calculate:
+Mean
+Standard deviation
+Minimum and Maximum value
+
+ import numpy as np
+
+arr = np.random.rand(10)
+
+print("Random Array:", arr)
+print("Mean:", np.mean(arr))
+print("Standard Deviation:", np.std(arr))
+print("Minimum:", np.min(arr))
+print("Maximum:", np.max(arr))
+
+
+OUTPUT: Random Array: [0.23333493 0.51364172 0.88044452 0.55009014 0.00584064 0.47719671
+ 0.32972644 0.70026273 0.82238504 0.97465107]
+Mean: 0.5487573946675399
+Standard Deviation: 0.28944913964530594
+Minimum: 0.005840638966175593
+Maximum: 0.9746510739476005
+
+QUESTION 5: Write a Python program using SciPy to:
+Calculate mean using scipy.stats
+Perform a t-test on a sample dataset
+
+from scipy import stats
+
+data1 = [10, 12, 14, 16, 18]
+data2 = [11, 13, 15, 17, 19]
+
+mean_value = stats.tmean(data1)
+print("Mean:", mean_value)
+
+t_stat, p_value = stats.ttest_ind(data1, data2)
+
+print("T-statistic:", t_stat)
+print("P-value:", p_value)
+
+
+OUTPUT:
+Mean: 14.0
+T-statistic: -0.5
+P-value: 0.6305360755569764
+
+QUESTION 6: Write a Python program to compute definite integration of a mathematical function using scipy.integrate.
+from scipy.integrate import quad
+
+def f(x):
+    return x**2
+
+result, error = quad(f, 0, 1)
+
+print("Integration Result:", result)
+print("Estimated Error:", error)
+
+OUTPUT:
+Integration Result: 0.33333333333333337
+Estimated Error: 3.700743415417189e-15
+
+QUESTION 7: Write a Python program to minimize a mathematical function using scipy.optimize.
+from scipy.optimize import minimize
+
+def func(x):
+    return x**2 + 5*x + 6
+initial_guess = 0
+
+result = minimize(func, initial_guess)
+
+print("Minimum value of function:", result.fun)
+print("Value of x at minimum:", result.x)
+ OUTPUT:
+Minimum value of function: -0.2499999999999991
+Value of x at minimum: [-2.50000002]
